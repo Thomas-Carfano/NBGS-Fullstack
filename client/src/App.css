@@ -1,0 +1,14 @@
+.nav{
+    margin-left: 10%;
+    border: 1px solid green;
+    padding: 5px 20px 5px 10px;
+    text-align: center;
+}
+
+#title{
+    font-family: cursive;
+}
+
+.navButton{
+    margin-right: 50%;
+}

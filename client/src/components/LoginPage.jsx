@@ -11,13 +11,15 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { green } from '@mui/material/colors';
+
 
 const Copyright = (props) => {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://github.com/Thomas-Carfano/NBGS-Fullstack">
-        Your Website
+        Newport Beach Golf Shop
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -27,7 +29,13 @@ const Copyright = (props) => {
 
 // TODO remove, this demo shouldn't need to reset the theme.
 
-const defaultTheme = createTheme();
+const defaultTheme = createTheme({
+  palette: {
+    primary: {
+      main: green[500],
+    },
+  },
+});
 
 const LoginPage = () => {
   const handleSubmit = (event) => {
@@ -97,7 +105,7 @@ const LoginPage = () => {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="/signup" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
