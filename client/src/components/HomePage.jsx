@@ -1,10 +1,12 @@
-import './App.css'
+import NavBar from "./NavBar"
+import '../App.css'
 
-function HomePage() {
+const HomePage = () => {
 
   return (
     <>
-    <h1>Newport Beach Golf Shop </h1>
+    <h1 id='title'>Newport Beach Golf Shop </h1>
+    <NavBar/>
     </>
   )
 }
