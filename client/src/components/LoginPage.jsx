@@ -48,6 +48,8 @@ const LoginPage = () => {
   };
 
   return (
+    <>
+    <Link href='/' color="inherit" underline="none"><h1 className='title'>Newport Beach Golf Shop </h1></Link>
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -115,6 +117,7 @@ const LoginPage = () => {
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
     </ThemeProvider>
+    </>
   );
 };
 

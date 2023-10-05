@@ -17,9 +17,9 @@ const NavBar = () => {
     return (
         <>
         <ThemeProvider theme={theme}>
-            <Button variant="contained" sx={{ mr: 5 }}>Home Page</Button>
-            <Button variant="contained" sx={{ mr: 5 }}>About Us</Button>
-            <Button variant="contained" sx={{ mr: 5 }}>Location</Button>
+            <Button variant="contained" sx={{ mr: 5 }} href='/'>Home Page</Button>
+            <Button variant="contained" sx={{ mr: 5 }} href='/about'>About Us</Button>
+            <Button variant="contained" sx={{ mr: 5 }} href='/location'>Location</Button>
             <Button variant="contained" sx={{ mr: 5 }} href='/login'>Login</Button>
         </ThemeProvider>
         </>
