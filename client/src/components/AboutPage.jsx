@@ -2,7 +2,7 @@ import '../App.css'
 import NavBar from './NavBar'
 import { Link } from 'react-router-dom'
 
-const HomePage = () => {
+const AboutPage = () => {
 
   return (
     <>
@@ -13,4 +13,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage
+export default AboutPage

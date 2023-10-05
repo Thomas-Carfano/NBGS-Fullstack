@@ -11,12 +11,13 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { green } from '@mui/material/colors';
 
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
+      <Link color="inherit" href="https://github.com/Thomas-Carfano/NBGS-Fullstack">
         Newport Beach Golf Shop
       </Link>{' '}
       {new Date().getFullYear()}
@@ -27,7 +28,13 @@ function Copyright(props) {
 
 // TODO remove, this demo shouldn't need to reset the theme.
 
-const defaultTheme = createTheme();
+const defaultTheme = createTheme({
+  palette: {
+    primary: {
+      main: green[500],
+    },
+  },
+});
 
 export default function SignUp() {
   const handleSubmit = (event) => {
@@ -40,6 +47,8 @@ export default function SignUp() {
   };
 
   return (
+    <>
+    <Link href='/' color="inherit" underline="none"><h1 className='title'>Newport Beach Golf Shop </h1></Link>
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -128,5 +137,6 @@ export default function SignUp() {
         <Copyright sx={{ mt: 5 }} />
       </Container>
     </ThemeProvider>
+    </>
   );
 }
