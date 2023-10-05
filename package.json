@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "cd nbgs && npm run build && cd .. && nodemon server",
-    "start": "npm i && cd client && npm i && npm run build && cd .. && cd server && nodemon ./server"
+    "start": "npm i && cd client && npm i && npm run build && cd .. && cd server && node ./server"
   },
   "author": "",
   "license": "ISC",
