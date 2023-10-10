@@ -1,30 +1,26 @@
 import '../App.css'
 import NavBar from './NavBar'
 import { Link } from 'react-router-dom'
-import { Typography } from '@mui/material'
-import FacebookIcon from '@mui/icons-material/Facebook';
+import Footer from './Footer'
 
 const HomePage = () => {
-
-  const Copyright = (props) => {
-    return (
-      <Typography variant="body2" color="text.secondary" align="center" {...props}>
-        {'Copyright © '}
-        <Link color="inherit" href="https://github.com/Thomas-Carfano/NBGS-Fullstack">
-          Newport Beach Golf Shop
-        </Link>{' '}
-        {new Date().getFullYear()}
-        {'.'}
-      </Typography>
-    );
-  }
 
   return (
     <>
     <Link to='/' className='title'><h1>Newport Beach Golf Shop </h1></Link>
     <NavBar/>
-    <Link to="https://www.facebook.com/SteveCarfanosNewportBeachGolfShop/"><FacebookIcon/></Link>
-    <Copyright sx={{ mt: 8, mb: 4 }} />
+    <h2>Phone Number: (949) 350-1900</h2>
+    <h2>Email Address: nbgolfshop@att.net</h2>
+
+    <h2>Store Hours</h2>
+    <h4>Monday: 9:30 - 6:30</h4>
+    <h4>Tuesday: 9:30 - 6:30</h4>
+    <h4>Wednesday: 9:30 - 6:30</h4>
+    <h4>Thursday: 9:30 - 6:30</h4>
+    <h4>Friday: 9:30 - 6:30</h4>
+    <h4>Saturday: 9:30 - 6:30</h4>
+    <h4>Sunday: 9:30 - 6:30</h4>
+    <Footer/>
     </>
   )
 }

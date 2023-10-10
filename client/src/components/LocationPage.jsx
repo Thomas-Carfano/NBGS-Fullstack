@@ -3,12 +3,13 @@ import NavBar from './NavBar'
 import { Link } from 'react-router-dom'
 import GoogleMapReact from 'google-map-react';
 import GolfCourseIcon from '@mui/icons-material/GolfCourse';
+import Footer from './Footer';
 
 const AnyReactComponent = ({ text }) => {
   return(
-    <> 
-  <GolfCourseIcon/>
-  <h2>{text}</h2>
+  <> 
+    <GolfCourseIcon/>
+    <h2>{text}</h2>
   </>
 )};
 
@@ -38,6 +39,7 @@ const LocationPage = () => {
         />
       </GoogleMapReact>
     </div>
+    <Footer/>
     </>
   )
 }
