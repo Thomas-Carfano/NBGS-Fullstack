@@ -9,8 +9,8 @@ const HomePage = () => {
     <>
     <Link to='/' className='title'><h1>Newport Beach Golf Shop </h1></Link>
     <NavBar/>
-    <h2>Phone Number: (949) 350-1900</h2>
-    <h2>Email Address: nbgolfshop@att.net</h2>
+    <Link to="tel:9492501900" className='contactInfo'><h2>Phone Number: (949) 250-1900</h2></Link>
+    <Link to="mailto:nbgolshop@att.net" className='contactInfo'> <h2>Email: NBGolfShop@att.net</h2></Link>
 
     <h2>Store Hours</h2>
     <h4>Monday: 9:30 - 6:30</h4>
