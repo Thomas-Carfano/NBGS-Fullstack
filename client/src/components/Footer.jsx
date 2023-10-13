@@ -24,9 +24,9 @@ const Footer = () => {
     return (
         <>
         <br/>
-        <Link to="https://www.facebook.com/SteveCarfanosNewportBeachGolfShop/"><FacebookIcon sx={{ ml: 85, mt: 5 }}/></Link>
-        <Link to="https://www.yelp.com/biz/steve-carfanos-newport-beach-golf-shop-store-newport-beach-2"><img src={`${Pic}`}/></Link>
-        <Copyright sx={{ mt: 8, mb: 4 }}/>
+        <Link to="https://www.facebook.com/SteveCarfanosNewportBeachGolfShop/"><FacebookIcon sx={{ ml: 90, mt: 5 }}/></Link>
+        <Link to="https://www.yelp.com/biz/steve-carfanos-newport-beach-golf-shop-store-newport-beach-2"><img id="yelp-logo" src={`${Pic}`}/></Link>
+        <Copyright sx={{ mt: 2, mb: 4 }}/>
         </>
     )
 }
