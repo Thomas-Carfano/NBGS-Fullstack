@@ -26,7 +26,7 @@ const LocationPage = () => {
     <Link to='/' className='title'><h1>Newport Beach Golf Shop </h1></Link>
     <NavBar/>
 
-    <div style={{ height: '75vh', width: '75%' }}>
+    <div style={{ height: '75vh', width: '75%', marginLeft: '10%', marginTop: '2%' }}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: "AIzaSyDLqZLDoNPwSYZ9yRnNMfih8u1S-vIENTs" }}
         defaultCenter={defaultProps.center}

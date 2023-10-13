@@ -5,6 +5,7 @@ import LoginPage from './components/LoginPage';
 import SignUp from './components/SignupPage';
 import LocationPage from './components/LocationPage';
 import AboutPage from './components/AboutPage';
+import StorePage from './components/Store';
 
 const App = () => {
 
@@ -15,7 +16,8 @@ const App = () => {
       <Route path="/login" element={<LoginPage />}/>
       <Route path="/about" element={<AboutPage />}/>
       <Route path="/signup" element={<SignUp />}/>
-      <Route path="/location" element={<LocationPage/>}></Route>
+      <Route path="/location" element={<LocationPage/>}/>
+      <Route path="/store" element={<StorePage/>}/>
     </Routes>
     </>
   )
