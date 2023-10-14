@@ -7,7 +7,6 @@ const AboutPage = () => {
 
   return (
     <>
-    <Link to='/' className='title'><h1>Newport Beach Golf Shop </h1></Link>
     <NavBar/>
     <Footer/>
     </>

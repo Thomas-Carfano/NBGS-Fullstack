@@ -25,3 +25,10 @@
     height: 25px;
     width: 25px;
 }
+
+#main-logo{
+    height: 100px;
+    width: 100px;
+    margin-left: 65%;
+    display: inline;
+}
