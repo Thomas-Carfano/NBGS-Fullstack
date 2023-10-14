@@ -35,6 +35,10 @@ app.get('/store', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/dist/index.html'))
 });
 
+app.get('/test', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/dist/index.html'))
+});
+
 app.listen(PORT, (error) => {
     if(!error){
         console.log(`Server is listening on ${PORT}`)

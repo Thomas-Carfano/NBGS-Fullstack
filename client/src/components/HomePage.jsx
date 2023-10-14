@@ -11,12 +11,14 @@ const HomePage = () => {
     "9:30am - 6:30pm",
     "9:30am - 6:30pm",
     "9:30am - 6:30pm",
+    "9:30am - 6:30pm",
     "10:00am - 5:00pm",
   ]
 
   const storeHoursToday = () => {
     const d = new Date();
     let day = d.getDay();
+    console.log(day)
     for(let i = 0; i < storeHours.length; i++){
       if(day === i){
         console.log(storeHours[i])
@@ -29,7 +31,6 @@ const HomePage = () => {
 
   return (
     <>
-    <Link to='/' className='title'><h1>Newport Beach Golf Shop </h1></Link>
     <NavBar/>
     <h2>Store Hours: {storeHoursToday()}</h2>
     <Link to="tel:9492501900" className='contactInfo'><h2>Phone Number: (949) 250-1900</h2></Link>

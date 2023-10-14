@@ -7,7 +7,6 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import NavBar from './NavBar';
-import Footer from './Footer';
 
 const storeProducts = [
   {
@@ -40,40 +39,6 @@ const TestPage = () => {
   console.log("test page")
   return (
     <>
-    <NavBar/>
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-        {storeProducts.map((_, index) => (
-          <Grid item xs={2} sm={4} md={4} key={index}>
-            <>
-            <Card sx={{ maxWidth: 345, mt: 5 }}>
-            <CardMedia
-              sx={{ height: 200 }}
-              image={storeProducts[index].image}
-              title={storeProducts[index].name}
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-              {storeProducts[index].name}
-              </Typography>
-              <Typography gutterBottom variant="h6" component="div">
-              {storeProducts[index].price}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-              {storeProducts[index].description}
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <Button size="small">Add To Cart</Button>
-              <Button size="small">Learn More</Button>
-            </CardActions>
-          </Card>
-          </>
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
-    <Footer/>
     </>
   );
 }
