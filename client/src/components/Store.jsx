@@ -12,13 +12,13 @@ import Footer from './Footer';
 const storeProducts = [
   {
       name: "ProV1",
-      price: 59.99,
+      price: "See Cart",
       description: "Pro V1 is the optimal premium performance choice for most players...",
       image: "https://www.titleist.com/dw/image/v2/AAZW_PRD/on/demandware.static/-/Sites-titleist-master/default/dw7086bc18/T2028S_01.png?sw=650&sh=650&sm=fit&sfrm=png"
   },
   {
       name: "ProV1x",
-      price: 59.99,
+      price: 'See Cart',
       description: "Pro V1x is the optimal premium performance choice for players looking for distance...",
       image: "https://www.titleist.com/dw/image/v2/AAZW_PRD/on/demandware.static/-/Sites-titleist-master/default/dwe5458002/T2048S_01.png?sw=650&sh=650&sm=fit&sfrm=png"
   },
