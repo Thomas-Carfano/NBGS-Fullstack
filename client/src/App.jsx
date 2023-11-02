@@ -7,6 +7,8 @@ import LocationPage from './components/LocationPage';
 import AboutPage from './components/AboutPage';
 import StorePage from './components/Store';
 import TestPage from './components/TestPage';
+
+
 const App = () => {
 
   return (
