@@ -3,6 +3,7 @@ import Button from '@mui/material/Button';
 import { green } from '@mui/material/colors';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
+import pic from '../pictures/nbgs-logo.jpeg'
 
 const NavBar = () => {
     console.log("NavBar");
@@ -21,7 +22,7 @@ const NavBar = () => {
         <>
         <Link to='/' className='title'>
           <h1 id="main-title">Newport Beach Golf Shop
-          <img id="main-logo" src="https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/302421315_520362946755898_3888582315608612355_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=BaMMbs7elekAX8W9DTu&_nc_ht=scontent-lax3-1.xx&oh=00_AfA0yNMJowYXETsD9yo45O5i0POTk0iE1A4hR3H548Uigw&oe=652FD8A4"/>
+          <img id="main-logo" src={pic}/>
           </h1>
         </Link>
       <div id="button-nav">
