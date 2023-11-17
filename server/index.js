@@ -39,10 +39,13 @@ app.get('/test', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/dist/index.html'))
 });
 
+app.use("/auth", require("./auth"));
+
+
 app.listen(PORT, (error) => {
     if(!error){
         console.log(`Server is listening on ${PORT}`)
     } else {
         console.log('not working')
     }
-})
+});

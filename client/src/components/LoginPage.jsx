@@ -30,9 +30,6 @@ const LoginPage = ({ setToken }) => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-
-
-
   const getFormData = async (event) => {
     event.preventDefault();
     try {
