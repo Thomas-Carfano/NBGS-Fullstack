@@ -6,7 +6,6 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import NavBar from './NavBar';
 import Footer from './Footer';
 
 const storeProducts = [
@@ -40,7 +39,6 @@ const TestPage = () => {
   console.log("test page")
   return (
     <>
-    <NavBar/>
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
         {storeProducts.map((_, index) => (

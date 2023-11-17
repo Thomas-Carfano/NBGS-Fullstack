@@ -1,5 +1,4 @@
 import '../App.css'
-import NavBar from './NavBar'
 import { Link } from 'react-router-dom'
 import Footer from './Footer'
 
@@ -28,7 +27,6 @@ const HomePage = () => {
 
   return (
     <>
-    <NavBar/>
     <h2 className='contactInfo'>Store Hours: {storeHoursToday()}</h2>;
     <Link to="tel:9492501900" className='contactInfo'><h2>Phone Number: (949) 250-1900</h2></Link>;
     <Link to="mailto:nbgolshop@att.net" className='contactInfo'> <h2>Email: NBGolfShop@att.net</h2></Link>;
