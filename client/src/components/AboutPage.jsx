@@ -1,12 +1,10 @@
 import '../App.css'
-import NavBar from './NavBar'
 import Footer from './Footer'
 
 const AboutPage = () => {
 
   return (
     <>
-    <NavBar/>
       <h3>Steve Carfano's Newport Beach Golf Shop</h3>
       <p>
         We invite you to experience our incredible selection

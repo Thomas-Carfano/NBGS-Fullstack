@@ -5,7 +5,6 @@ import Footer from './Footer';
 import NavigationIcon from '@mui/icons-material/Navigation';
 import Fab from '@mui/material/Fab';
 import { Link } from 'react-router-dom';
-import NavBar from './NavBar'
 
 
 const GoogleMapGolf = ({ text }) => {
@@ -30,7 +29,6 @@ const LocationPage = () => {
 
   return (
     <>
-    <NavBar/>
     <h2> Golf Shop Address: 3100 Irvine Ave. Newport Beach, CA, 92600</h2>
       <Link to="https://www.google.com/maps/place/Steve+Carfano's+Newport+Beach+Golf+Shop/@33.6592756,-117.8809357,15z/data=!4m6!3m5!1s0x80dcdfab78b3b055:0xb70abddf8d02c58f!8m2!3d33.6592756!4d-117.8809357!16s%2Fg%2F1hf5c32rz?entry=ttu">
         <Fab variant="extended" sx={{ mt: 3, mr: 3 }}>
@@ -38,7 +36,7 @@ const LocationPage = () => {
         Navigate
         </Fab>
       </Link>
-      <div style={{ height: '75vh', width: '75%', marginLeft: '12%', marginTop: '2%' }}>
+    <div style={{ height: '75vh', width: '75%', marginLeft: '12%', marginTop: '2%' }}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: "AIzaSyDLqZLDoNPwSYZ9yRnNMfih8u1S-vIENTs" }}
         defaultCenter={defaultProps.center}

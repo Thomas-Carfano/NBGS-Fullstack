@@ -13,7 +13,6 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { green } from '@mui/material/colors';
 import Footer from './Footer';
-import NavBar from './NavBar';
 
 // TODO remove, this demo shouldn't need to reset the theme.
 
@@ -37,7 +36,6 @@ export default function SignUp() {
 
   return (
     <>
-    <NavBar/>
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
