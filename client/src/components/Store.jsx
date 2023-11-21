@@ -71,7 +71,6 @@ const TestPage = () => {
         ))}
       </Grid>
     </Box>
-    <Footer/>
     </>
   );
 }

@@ -49,6 +49,7 @@ const LoginPage = ({ setToken }) => {
         localStorage.setItem("token", data.token);
         localStorage.setItem("userId", data.id);
         setToken(data.token);
+        console.log(`Login Sucessful: ${data.token}`)
       }
     } catch (err) {
       console.log(err);
@@ -130,7 +131,6 @@ const LoginPage = ({ setToken }) => {
         </Box>
       </Container>
     </ThemeProvider>
-    <Footer/>
     </>
   );
 };
