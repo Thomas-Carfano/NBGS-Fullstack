@@ -123,7 +123,6 @@ export default function SignUp() {
         </Box>
       </Container>
     </ThemeProvider>
-    <Footer/>
     </>
   );
 }

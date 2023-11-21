@@ -19,7 +19,6 @@ const AboutPage = () => {
       <h1>Located near John Wayne International Airport</h1>
       <br/>
       <br/>
-    <Footer/>
     </>
   )
 }

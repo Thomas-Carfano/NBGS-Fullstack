@@ -50,7 +50,6 @@ const LocationPage = () => {
         />
       </GoogleMapReact>
     </div>
-    <Footer/>
     </>
   )
 }
