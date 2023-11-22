@@ -12,7 +12,6 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { green } from '@mui/material/colors';
-import Footer from './Footer';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 // TODO remove, this demo shouldn't need to reset the theme.
@@ -135,4 +134,4 @@ const LoginPage = ({ setToken }) => {
   );
 };
 
-export default LoginPage
+export default LoginPage;

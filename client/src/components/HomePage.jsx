@@ -1,6 +1,5 @@
-import '../App.css'
-import { Link } from 'react-router-dom'
-import Footer from './Footer'
+import '../App.css';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   const storeHours = [

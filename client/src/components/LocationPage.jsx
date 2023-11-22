@@ -1,7 +1,6 @@
-import '../App.css'
+import '../App.css';
 import GoogleMapReact from 'google-map-react';
 import GolfCourseIcon from '@mui/icons-material/GolfCourse';
-import Footer from './Footer';
 import NavigationIcon from '@mui/icons-material/Navigation';
 import Fab from '@mui/material/Fab';
 import { Link } from 'react-router-dom';
