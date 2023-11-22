@@ -1,5 +1,5 @@
-import './App.css'
-import HomePage from './components/HomePage'
+import './App.css';
+import HomePage from './components/HomePage';
 import { Routes, Route } from "react-router-dom";
 import LoginPage from './components/LoginPage';
 import SignUp from './components/SignupPage';
@@ -9,6 +9,7 @@ import StorePage from './components/Store';
 // import TestPage from './components/TestPage';
 import NavBar from './components/NavBar';
 import { useState } from 'react';
+import Footer from './components/Footer';
 
 
 const App = () => {
@@ -27,8 +28,9 @@ const App = () => {
       {/* <Route path="/test" element={<TestPage/>}/> */}
 
     </Routes>
+    <Footer/>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

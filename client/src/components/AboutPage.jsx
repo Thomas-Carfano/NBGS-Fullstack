@@ -1,5 +1,4 @@
-import '../App.css'
-import Footer from './Footer'
+import '../App.css';
 
 const AboutPage = () => {
 

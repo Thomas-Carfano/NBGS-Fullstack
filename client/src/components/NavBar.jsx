@@ -1,9 +1,9 @@
-import '../App.css'
+import '../App.css';
 import Button from '@mui/material/Button';
 import { green } from '@mui/material/colors';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
-import pic from '../pictures/nbgs-logo.jpeg'
+import pic from '../pictures/nbgs-logo.jpeg';
 
 const NavBar = () => {
     console.log("NavBar");
