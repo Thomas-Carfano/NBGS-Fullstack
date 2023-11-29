@@ -26,6 +26,16 @@ const HomePage = () => {
 
   return (
     <>
+    <h3>Steve Carfano's Newport Beach Golf Shop</h3>
+       <p>
+         We invite you to experience our incredible selection
+         of brand name golf apparel, equipment <br/> and accessories
+         at superstore pricing with quality services you can only
+         find in a family <br/> operated business. We are a discount golf
+         store with the look and feel of a private club pro shop.<br/> We
+         have the lowest prices on top name brand golf equipment, golf
+        balls, golf shoes and golf clubs, Guaranteed!
+       </p>
     <h2 className='contactInfo'>Store Hours: {storeHoursToday()}</h2>
     <Link to="tel:9492501900" className='contactInfo'><h2>Phone Number: (949) 250-1900</h2></Link>
     <Link to="mailto:nbgolshop@att.net" className='contactInfo'> <h2>Email: NBGolfShop@att.net</h2></Link>

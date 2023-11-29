@@ -1,8 +1,8 @@
-import '../App.css'
-import { Typography } from '@mui/material'
-import { Link } from 'react-router-dom'
+import '../App.css';
+import { Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 import FacebookIcon from '@mui/icons-material/Facebook';
-import Pic from '../pictures/yelp_favicon.png'
+import Pic from '../pictures/yelp_favicon.png';
 import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme ,ThemeProvider } from '@mui/material/styles';
 import Box from '@mui/material/Box';

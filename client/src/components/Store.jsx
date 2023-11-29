@@ -34,7 +34,7 @@ const storeProducts = [
 },
 ]
 
-const TestPage = () => {
+const StorePage = () => {
   console.log("test page")
   return (
     <>
@@ -74,4 +74,4 @@ const TestPage = () => {
   );
 }
 
-export default TestPage
+export default StorePage;
