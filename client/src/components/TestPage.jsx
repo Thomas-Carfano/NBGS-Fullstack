@@ -27,30 +27,30 @@ const GoogleMapGolf = ({ text }) => {
   
     return (
       <>
-      <h3>Steve Carfano's Newport Beach Golf Shop</h3>
-       <p>
-         We invite you to experience our incredible selection
-         of brand name golf apparel, equipment <br/> and accessories
-         at superstore pricing with quality services you can only
-         find in a family <br/> operated business. We are a discount golf
-         store with the look and feel of a private club pro shop.<br/> We
-         have the lowest prices on top name brand golf equipment, golf
-        balls, golf shoes and golf clubs, Guaranteed!
-       </p>
-            <div style={{ height: '30vh', width: '30%', marginLeft: '60%', marginTop: '2%' }}>
-                <GoogleMapReact
-                bootstrapURLKeys={{ key: "AIzaSyDLqZLDoNPwSYZ9yRnNMfih8u1S-vIENTs" }}
-                defaultCenter={defaultProps.center}
-                defaultZoom={defaultProps.zoom}
-                id="google-map"
-                >
-                    <GoogleMapGolf
-                        lat={33.6593248}
-                        lng={-117.8809383}
-                        text="Newport Beach Golf Shop"
-                    />
-                </GoogleMapReact>
-            </div>
+                <div style={{ height: '30vh', width: '30%', marginLeft: '60%', marginTop: '2%' }}>
+                <p>
+                  We invite you to experience our incredible selection
+                  of brand name golf apparel, equipment and accessories
+                  at superstore pricing with quality services you can only
+                  find in a family operated business. We are a discount golf
+                  store with the look and feel of a private club pro shop. We
+                  have the lowest prices on top name brand golf equipment, golf
+                  balls, golf shoes and golf clubs, Guaranteed!
+                </p>
+                  <GoogleMapReact
+                  bootstrapURLKeys={{ key: "AIzaSyDLqZLDoNPwSYZ9yRnNMfih8u1S-vIENTs" }}
+                  defaultCenter={defaultProps.center}
+                  defaultZoom={defaultProps.zoom}
+                  id="google-map"
+                  >
+                      <GoogleMapGolf
+                          lat={33.6593248}
+                          lng={-117.8809383}
+                          text="Newport Beach Golf Shop"
+                      />
+                  </GoogleMapReact>
+                </div>
+
             <section style={{marginLeft: '60%'}}>
             <Link to="https://www.google.com/maps/place/Steve+Carfano's+Newport+Beach+Golf+Shop/@33.6592756,-117.8809357,15z/data=!4m6!3m5!1s0x80dcdfab78b3b055:0xb70abddf8d02c58f!8m2!3d33.6592756!4d-117.8809357!16s%2Fg%2F1hf5c32rz?entry=ttu">
                 <Fab variant="extended" sx={{ mt: 3, mr: 3 }}>

@@ -32,7 +32,27 @@ const Footer = () => {
           },
         },
       });
+
+      const storeHours = [
+        "10:00am - 5:00pm",
+        "9:30am - 6:30pm",
+        "9:30am - 6:30pm",
+        "9:30am - 6:30pm",
+        "9:30am - 6:30pm",
+        "9:30am - 6:30pm",
+        "9:30am - 6:30pm",
+        "9:30am - 6:30pm",
+      ];
       
+      const storeHoursToday = () => {
+        const d = new Date();
+        let day = d.getDay();
+        for(let i = 0; i < storeHours.length; i++){
+          if(day === i){
+            return (storeHours[i]);
+          }
+        }
+      };
 
     return (
         <>
@@ -58,6 +78,10 @@ const Footer = () => {
                 : theme.palette.grey[800],
           }}
         >
+          <span className='storeHours'>Store Hours: {storeHoursToday()}</span>
+          <Link to="tel:9492501900" className='contactInfo'><span>Phone Number: (949) 250-1900</span></Link>
+          <Link to="mailto:nbgolshop@att.net" className='contactInfo'> <p>Email: NBGolfShop@att.net</p></Link>
+          <Link to="https://www.google.com/maps/place/Steve+Carfano's+Newport+Beach+Golf+Shop/@33.6592756,-117.8809357,15z/data=!4m6!3m5!1s0x80dcdfab78b3b055:0xb70abddf8d02c58f!8m2!3d33.6592756!4d-117.8809357!16s%2Fg%2F1hf5c32rz?entry=ttu" className='contactInfo'> <p>Address: 3100 Irvine Ave. Newport Beach</p></Link>
           <Container maxWidth="sm">
             <Typography variant="body1">
             <Link to="https://www.facebook.com/SteveCarfanosNewportBeachGolfShop/"><FacebookIcon sx={{ ml: 32, mt: 5 }}/></Link>
