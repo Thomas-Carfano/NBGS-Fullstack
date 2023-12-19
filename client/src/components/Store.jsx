@@ -35,7 +35,9 @@ const storeProducts = [
 ]
 
 const StorePage = () => {
-  console.log("test page")
+  console.log("test page");
+
+  
   return (
     <>
     <Box sx={{ flexGrow: 1 }}>
