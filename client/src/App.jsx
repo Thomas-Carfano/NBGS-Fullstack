@@ -21,9 +21,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />}/>
         <Route path="/login" element={<LoginPage setToken={setToken}/>}/>
-        <Route path="/signup" element={<SignUp setToken={setToken}/>}/>
-        {/* <Route path="/about" element={<AboutPage />}/> */}
-        {/* <Route path="/location" element={<LocationPage/>}/> */}
+        <Route path="/signup" element={<SignUp setToken={setToken}/>}/> 
         <Route path="/store" element={<StorePage/>}/>
         <Route path="/test" element={<TestPage/>}/>
       </Routes>

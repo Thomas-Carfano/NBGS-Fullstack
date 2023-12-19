@@ -23,7 +23,7 @@ const defaultTheme = createTheme({
   },
 });
 
-export default function SignUp() {
+const SignUp = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -99,7 +99,7 @@ export default function SignUp() {
               <Grid item xs={12}>
                 <FormControlLabel
                   control={<Checkbox value="allowExtraEmails" color="primary" />}
-                  label="Subscribe to email list."
+                  label="Subscribe to our weekly email list!"
                 />
               </Grid>
             </Grid>
@@ -125,3 +125,5 @@ export default function SignUp() {
     </>
   );
 }
+
+export default SignUp;

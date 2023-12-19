@@ -6,7 +6,6 @@ const HomePage = () => {
   return (
     <>
     <br/>
-    {/* <img id='homePic' src={nbgsHome}></img> */}
        <p>
          We invite you to experience our incredible selection
          of brand name golf apparel, equipment <br/> and accessories
@@ -16,6 +15,7 @@ const HomePage = () => {
          have the lowest prices on top name brand golf equipment, golf
         balls, golf shoes and golf clubs, Guaranteed!
        </p>
+    <img id='homePic' src={nbgsHome}></img>
     </>
   );
 };
