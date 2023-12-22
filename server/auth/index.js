@@ -18,7 +18,7 @@ router.post("/login", async (req, res) => {
     const user = await prisma.user.findUnique({ where: { email } });
     console.log(user)
     if (!user) {
-      return res.status(404).json({ error: 'Email already in use.' });
+      return res.status(404).json({ error: 'User Not Found.' });
     }
 
     // Compare entered password with stored hashed password
@@ -39,7 +39,7 @@ router.post("/login", async (req, res) => {
 
 router.post("/register", async (req, res) => {
   try {
-    const { first_name, last_name, password, email, phone } = req.body;
+    const { email, password, phone, first_name, last_name, admin } = req.body;
 
     // Check if user already exists
     const userExists = await prisma.user.findUnique({ where: { email } });
@@ -57,7 +57,8 @@ router.post("/register", async (req, res) => {
             password: hashedPassword,
             phone,
             first_name,
-            last_name
+            last_name,
+            admin
         }
     });
     console.log(newUser)

@@ -9,7 +9,8 @@ const seed = async() => {
             password: await bcrypt.hash("t", 10),
             first_name: "t",
             last_name: "t",
-            phone: 1112220000
+            phone: 1112220000,
+            admin: true
         }
     })
         console.log("Successfully seeded")

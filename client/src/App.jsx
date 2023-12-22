@@ -10,6 +10,7 @@ import TestPage from './components/TestPage';
 import NavBar from './components/NavBar';
 import { useState } from 'react';
 import Footer from './components/Footer';
+import AdminPage from './components/AdminPage';
 
 
 const App = () => {
@@ -23,7 +24,9 @@ const App = () => {
         <Route path="/login" element={<LoginPage setToken={setToken}/>}/>
         <Route path="/signup" element={<SignUp setToken={setToken}/>}/> 
         <Route path="/store" element={<StorePage/>}/>
+        <Route path="/admin" element={<AdminPage/>}/>
         <Route path="/test" element={<TestPage/>}/>
+        
       </Routes>
     <Footer/>
     </>

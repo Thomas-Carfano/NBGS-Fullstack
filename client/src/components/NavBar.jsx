@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import pic from '../pictures/nbgs-logo.jpeg';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
-const NavBar = () => {
+const NavBar = ({ token, setToken }) => {
     console.log("NavBar");
 
     const theme = createTheme({
@@ -30,10 +30,11 @@ return (
       <ThemeProvider theme={theme} sx={{ fontFamily: 'Roboto' }}>
           <Button variant="contained" sx={{ mr: 5 }} href='/'>Home Page</Button>
           <Button variant="contained" sx={{ mr: 5 }} href='/store'>Store</Button>
-          <Button variant="contained" sx={{ mr: 5 }} href='/login'>Login</Button>
+          {token ? null : <Button variant="contained" sx={{ mr: 5 }} href='/login'>Login</Button>}
+          {!token ? null : <Button variant="contained" sx={{ mr: 5 }} href='/admin'>Admin</Button>}
           {/* <Button variant="contained" sx={{ mr: 5 }} href='/test'>Test</Button> */}
       </ThemeProvider>
-      <ShoppingCartIcon sx={{ml: 95}}/>
+      <ShoppingCartIcon sx={{ml: 108}}/>
     </div>
   </>
   )

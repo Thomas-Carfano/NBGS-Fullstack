@@ -63,6 +63,7 @@ const Footer = () => {
           display: 'flex',
           flexDirection: 'column',
           minHeight: '50vh',
+          marginTop: 20
         }}
       >
         <CssBaseline />

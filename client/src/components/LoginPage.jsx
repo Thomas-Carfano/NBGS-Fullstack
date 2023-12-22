@@ -14,7 +14,6 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { green } from '@mui/material/colors';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// TODO remove, this demo shouldn't need to reset the theme.
 
 const defaultTheme = createTheme({
   palette: {

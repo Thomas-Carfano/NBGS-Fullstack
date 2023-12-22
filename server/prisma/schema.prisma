@@ -16,6 +16,6 @@ model User {
   password    String   @db.VarChar(255)
   first_name  String   @db.VarChar(55)
   last_name   String   @db.VarChar(55)
-  phone       Int      @unique
-  
+  phone       Int      
+  admin       Boolean
 }
