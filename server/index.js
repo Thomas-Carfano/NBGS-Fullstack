@@ -35,6 +35,10 @@ app.get('/store', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/dist/index.html'))
 });
 
+app.get('/admin', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/dist/index.html'))
+});
+
 app.get('/test', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/dist/index.html'))
 });
