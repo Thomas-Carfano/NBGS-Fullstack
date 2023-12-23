@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import pic from '../pictures/nbgs-logo.jpeg';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
-const NavBar = ({ token, setToken }) => {
+const NavBar = ({ token }) => {
     console.log("NavBar");
 
     const theme = createTheme({
@@ -21,21 +21,17 @@ const NavBar = ({ token, setToken }) => {
 
 return (
   <>
-    <Link to='/' className='title'>
-      <h1 id="main-title">Newport Beach Golf Shop
-      <img id="main-logo" src={pic}/>
-      </h1>
-    </Link>
-    <div id="button-nav">
+    <Link to='/' className='title'><h1 id="main-title">Newport Beach Golf Shop<img id="main-logo" src={pic}/></h1></Link>
+    <nav id="button-nav">
       <ThemeProvider theme={theme} sx={{ fontFamily: 'Roboto' }}>
-          <Button variant="contained" sx={{ mr: 5 }} href='/'>Home Page</Button>
-          <Button variant="contained" sx={{ mr: 5 }} href='/store'>Store</Button>
-          {token ? null : <Button variant="contained" sx={{ mr: 5 }} href='/login'>Login</Button>}
-          {!token ? null : <Button variant="contained" sx={{ mr: 5 }} href='/admin'>Admin</Button>}
+          <Link to='/'><Button variant="contained" sx={{ mr: 5 }} href='/'>Home Page</Button></Link>
+          <Link to='/store'><Button variant="contained" sx={{ mr: 5 }} href='/store'>Store</Button></Link>
+          {token ? null : <Link to='/login'><Button variant="contained" sx={{ mr: 5 }}>Login</Button></Link>}
+          {!token ? null : <Link to='/admin'><Button variant="contained" sx={{ mr: 5 }}>Admin</Button></Link>}
           {/* <Button variant="contained" sx={{ mr: 5 }} href='/test'>Test</Button> */}
       </ThemeProvider>
-      <ShoppingCartIcon sx={{ml: 108}}/>
-    </div>
+      {!token ? null : <ShoppingCartIcon sx={{ml: 108}}/>}
+    </nav>
   </>
   )
 }

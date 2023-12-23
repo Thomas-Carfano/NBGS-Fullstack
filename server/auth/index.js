@@ -58,7 +58,7 @@ router.post("/register", async (req, res) => {
             phone,
             first_name,
             last_name,
-            admin
+            admin: false
         }
     });
     console.log(newUser)
