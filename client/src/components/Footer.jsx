@@ -10,7 +10,6 @@ import Container from '@mui/material/Container';
 import { green } from '@mui/material/colors';
 
 const Footer = () => {
-    console.log("Footer");
 
     const Copyright = (props) => {
         return (

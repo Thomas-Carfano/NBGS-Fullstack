@@ -7,7 +7,7 @@ require("dotenv").config();
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.send('reached Auth router');
+  res.send('You have reached the authorization router');
 });
 
 router.post("/login", async (req, res) => {
@@ -38,8 +38,9 @@ router.post("/login", async (req, res) => {
 });
 
 router.post("/register", async (req, res) => {
+  console.log(req.body)
   try {
-    const { email, password, phone, first_name, last_name, admin } = req.body;
+    const { email, password, phone, first_name, last_name } = req.body;
 
     // Check if user already exists
     const userExists = await prisma.user.findUnique({ where: { email } });
@@ -57,7 +58,7 @@ router.post("/register", async (req, res) => {
             password: hashedPassword,
             phone,
             first_name,
-            last_name,
+            last_name, 
             admin: false
         }
     });

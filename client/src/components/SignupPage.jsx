@@ -12,7 +12,8 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { green } from '@mui/material/colors';
-
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const defaultTheme = createTheme({
   palette: {
@@ -22,14 +23,44 @@ const defaultTheme = createTheme({
   },
 });
 
-const SignUp = () => {
-  const handleSubmit = (event) => {
+const SignUp = ({ setToken }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [phone, setPhone] = useState(0);
+  const [first_name, setFirstName] = useState("");
+  const [last_name, setLastName] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = async (event) => {
+
+    console.log(email)
+    console.log(password)
+    console.log(phone)
+    console.log(first_name)
+    console.log(last_name)
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    try {
+      const response = await fetch("/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: email, password: password, phone: phone, first_name: first_name, last_name: last_name}),
+      });
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Something went wrong");
+      }
+      if (data.token) {
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("userId", data.id);
+        setToken(data.token);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+    navigate("/");
   };
 
   return (
@@ -55,13 +86,15 @@ const SignUp = () => {
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
-                  autoComplete="given-name"
                   name="firstName"
                   required
                   fullWidth
                   id="firstName"
                   label="First Name"
                   autoFocus
+                  onChange={(e) => {
+                    setFirstName(e.target.value)
+                  }}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -71,7 +104,9 @@ const SignUp = () => {
                   id="lastName"
                   label="Last Name"
                   name="lastName"
-                  autoComplete="family-name"
+                  onChange={(e) => {
+                    setLastName(e.target.value)
+                  }}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -81,7 +116,9 @@ const SignUp = () => {
                   id="phone"
                   label="Phone Number"
                   name="phone"
-                  autoComplete="phone"
+                  onChange={(e) => {
+                    setPhone(e.target.value)
+                  }}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -91,7 +128,9 @@ const SignUp = () => {
                   id="email"
                   label="Email Address"
                   name="email"
-                  autoComplete="email"
+                  onChange={(e) => {
+                    setEmail(e.target.value)
+                  }}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -102,7 +141,9 @@ const SignUp = () => {
                   label="Password"
                   type="password"
                   id="password"
-                  autoComplete="new-password"
+                  onChange={(e) => {
+                    setPassword(e.target.value)
+                  }}
                 />
               </Grid>
               <Grid item xs={12}>

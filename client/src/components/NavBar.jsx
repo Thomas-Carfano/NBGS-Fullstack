@@ -7,7 +7,6 @@ import pic from '../pictures/nbgs-logo.jpeg';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const NavBar = ({ token }) => {
-    console.log("NavBar");
 
     const theme = createTheme({
   palette: {
