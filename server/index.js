@@ -8,6 +8,8 @@ const jwt = require("jsonwebtoken");
 const PORT = 3030;
 app.use(morgan("dev"));
 app.use(bodyParser.json());
+const cors = require("cors");
+app.use(cors());
 
 app.use((req, res, next) => {
     const auth = req.headers.authorization;
