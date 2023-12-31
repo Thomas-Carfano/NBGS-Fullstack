@@ -19,3 +19,14 @@ model User {
   phone       String   @db.VarChar(15)      
   admin       Boolean
 }
+
+model Item {
+  id          Int @id @unique @default(autoincrement())
+  name        String @db.VarChar(255) @unique
+  brand       String @db.VarChar(255) @unique
+  price       Int
+  cost        Int
+  description String
+  image       String
+  gender      String
+}

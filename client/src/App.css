@@ -9,6 +9,12 @@
     font-family: cursive;
     text-decoration: none;
 }
+#main-title{
+    font-family: cursive;
+    text-decoration: none;
+    color: black
+}
+
 
 .navButton{
     margin-right: 50%;
@@ -33,6 +39,7 @@
     display: inline-flex;
     float: right;
     position: absolute;
+    text-decoration: none;
 }
 
 #button-nav{
@@ -49,4 +56,8 @@
     height: 350px;
     width: 500px;
     margin-top: 5%;
+}
+
+#shopping-cart-icon{
+    color: black;
 }
