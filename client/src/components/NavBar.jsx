@@ -18,6 +18,10 @@ const NavBar = ({ token }) => {
     fontFamily: ['Roboto']},
 });
 
+const cartPage = () => {
+  console.log("cart page")
+}
+
 return (
   <>
     <Link to='/' className='title'><h1 id="main-title">Newport Beach Golf Shop<img id="main-logo" src={pic}/></h1></Link>
@@ -29,7 +33,7 @@ return (
           {!token ? null : <Link to='/admin'><Button variant="contained" sx={{ mr: 5 }}>Admin</Button></Link>}
           {/* <Button variant="contained" sx={{ mr: 5 }} href='/test'>Test</Button> */}
       </ThemeProvider>
-      {!token ? null : <ShoppingCartIcon sx={{ml: 108}}/>}
+      {!token ? null : <Link onClick={cartPage} to="/cart"><ShoppingCartIcon id="shopping-cart-icon" sx={{ml: 108}}/></Link>}
     </nav>
   </>
   )

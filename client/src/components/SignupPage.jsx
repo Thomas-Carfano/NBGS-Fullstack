@@ -32,13 +32,8 @@ const SignUp = ({ setToken }) => {
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
-
-    console.log(email)
-    console.log(password)
-    console.log(phone)
-    console.log(first_name)
-    console.log(last_name)
     event.preventDefault();
+    
     try {
       const response = await fetch("/auth/register", {
         method: "POST",
