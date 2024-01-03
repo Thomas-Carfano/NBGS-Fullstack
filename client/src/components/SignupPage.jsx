@@ -35,7 +35,7 @@ const SignUp = ({ setToken }) => {
     event.preventDefault();
     
     try {
-      const response = await fetch("/auth/register", {
+      const response = await fetch("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
