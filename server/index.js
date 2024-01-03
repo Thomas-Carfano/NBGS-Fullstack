@@ -21,7 +21,6 @@ app.use((req, res, next) => {
       const { id } = jwt.verify(token, process.env.JWT);
       req.userID = id;
     } catch (err) {
-      req.userID = null;
     }
     next();
   });
@@ -38,15 +37,7 @@ app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/dist/index.html'))
 });
 
-app.get('/about', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/dist/index.html'))
-});
-
 app.get('/signup', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/dist/index.html'))
-});
-
-app.get('/location', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/dist/index.html'))
 });
 
@@ -66,7 +57,9 @@ app.get('/test', (req, res) => {
 app.use("/auth", require("./auth"));
 app.use("/storeDB", require("./storeDB"));
 
-//Start App on Port
+
+
+//Start App on Port specified in .env file for local machine
 app.listen(PORT, (error) => {
     if(!error){
         console.log(`Server is listening on ${PORT}`)
