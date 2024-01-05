@@ -15,7 +15,7 @@ const StorePage = () => {
   useEffect(() => {
     const fetchItems = async () => {
         try {
-            const response = await fetch(`/storeDB/items/`, {
+            const response = await fetch(`https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/store/items`, {
               method: "GET",
               headers: {
                 "Content-Type": "application/json",
@@ -45,7 +45,7 @@ const StorePage = () => {
             <Card sx={{ maxWidth: 345, mt: 5 }}>
             <CardMedia
               sx={{ height: 200 }}
-              image={storeProducts[index].image}
+              image={storeProducts[index]["image-url"]}
               title={storeProducts[index].name}
             />
             <CardContent>
@@ -56,7 +56,7 @@ const StorePage = () => {
               {storeProducts[index].price}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-              {storeProducts[index].description}
+              {storeProducts[index]["item-description"]}
               </Typography>
             </CardContent>
             <CardActions>
