@@ -9,7 +9,6 @@ import Typography from '@mui/material/Typography';
 import { useState, useEffect } from 'react';
 
 const StorePage = () => {
-  console.log("test page");
   const [storeProducts, setStoreProducts] = useState([]);
 
   useEffect(() => {
