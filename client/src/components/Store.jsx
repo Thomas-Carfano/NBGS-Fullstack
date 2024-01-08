@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useState, useEffect } from 'react';
 
-const StorePage = () => {
+const StorePage = ({setCartItems}) => {
   const [storeProducts, setStoreProducts] = useState([]);
 
   useEffect(() => {
@@ -33,6 +33,10 @@ const StorePage = () => {
     }
     fetchItems();
 }, []);
+
+const addToCart = (e) => {
+  console.log(e)
+}
   
   return (
     <>
@@ -59,7 +63,7 @@ const StorePage = () => {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small">Add To Cart</Button>
+              <Button size="small" onClick={addToCart(storeProducts[index])}>Add To Cart</Button>
               <Button size="small">Learn More</Button>
             </CardActions>
           </Card>

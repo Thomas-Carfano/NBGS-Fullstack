@@ -12,7 +12,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { green } from '@mui/material/colors';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const defaultTheme = createTheme({
@@ -26,12 +26,25 @@ const defaultTheme = createTheme({
 const LoginPage = ({ setToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loginURL, setLoginURL] = useState(null)
   const navigate = useNavigate();
+
+  useEffect(() => {
+  const checkURL = () => {
+    if(document.referrer=="https://nbgolfshop.com"){
+      setLoginURL("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/auth/login")
+    } else {
+      setLoginURL("/auth/login")
+    }
+  }
+  checkURL()
+}, [])
 
   const getFormData = async (event) => {
     event.preventDefault();
+
     try {
-      const response = await fetch("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/auth/login", {
+      const response = await fetch(loginURL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

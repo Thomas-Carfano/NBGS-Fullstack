@@ -14,6 +14,7 @@ import CartPage from './components/CartPage';
 
 const App = () => {
   const [token, setToken] = useState(null);
+  const [cartItems, setCartItems] = useState(null);
 
   return (
     <>
@@ -22,9 +23,9 @@ const App = () => {
         <Route path="/" element={<HomePage />}/>
         <Route path="/login" element={<LoginPage setToken={setToken}/>}/>
         <Route path="/signup" element={<SignUp setToken={setToken}/>}/> 
-        <Route path="/store" element={<StorePage/>}/>
+        <Route path="/store" element={<StorePage setCartItems={setCartItems}/>}/>
         <Route path="/admin" element={<AdminPage/>}/>
-        <Route path="/cart" element={<CartPage/>}/>
+        <Route path="/cart" element={<CartPage cartItems={cartItems}/>}/>
         <Route path="/test" element={<TestPage/>}/>
       </Routes>
     <Footer/>
