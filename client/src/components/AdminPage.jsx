@@ -50,7 +50,7 @@ const AdminPage = () => {
                 const data = await response.json();
                 console.log(data)
             } else {
-                console.error("Error fetching Player!");
+                console.error("Error Creating Item");
             }
         } catch (error) {
             console.error("Error....", error);
@@ -69,7 +69,7 @@ const AdminPage = () => {
                   console.log(data)
                   setStoreProducts(data);
               } else {
-                  console.error("Error fetching Player!");
+                  console.error("Error Getting Items");
               }
           } catch (error) {
               console.error("Error....", error);

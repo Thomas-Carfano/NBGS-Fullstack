@@ -36,10 +36,9 @@ const StorePage = ({setCartItems}) => {
             });
             if (response.ok) {
                 const data = await response.json();
-                console.log(data)
                 setStoreProducts(data);
             } else {
-                console.error("Error fetching Player!");
+                console.error("Error Getting Items");
             }
         } catch (error) {
             console.error("Error....", error);
@@ -49,7 +48,8 @@ const StorePage = ({setCartItems}) => {
 }, [storeURL]);
 
 const addToCart = (e) => {
-  console.log()
+  console.log(e.target.id)
+  setCartItems(e.target.id)
 }
   
   return (
@@ -62,7 +62,7 @@ const addToCart = (e) => {
             <Card sx={{ maxWidth: 345, mt: 5 }}>
             <CardMedia
               sx={{ height: 200 }}
-              image={storeProducts[index]["image-url"]}
+              image={storeProducts[index]["image_url"]}
               title={storeProducts[index].name}
             />
             <CardContent>
@@ -73,11 +73,11 @@ const addToCart = (e) => {
               {storeProducts[index].price}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-              {storeProducts[index]["item-description"]}
+              {storeProducts[index]["item_description"]}
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small" onClick={addToCart}>Add To Cart</Button>
+              <Button size="small" onClick={addToCart} id={storeProducts[index].id}>Add To Cart</Button>
               <Button size="small">Learn More</Button>
             </CardActions>
           </Card>
