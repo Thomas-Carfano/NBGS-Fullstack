@@ -8,13 +8,27 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useState, useEffect } from 'react';
 
-const StorePage = () => {
+const StorePage = ({setCartItems}) => {
   const [storeProducts, setStoreProducts] = useState([]);
+  const [storeURL, setStoreURL] = useState(null)
+
+    //USED FOR LOCAL TESTING TO SAVE MONEY ON API CALLS >>>
+    useEffect(() => {
+      const checkURL = () => {
+        if(document.referrer=="https://nbgolfshop.com"){
+          setStoreURL("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/auth/login")
+        } else {
+          setStoreURL("/storeDB/items")
+        }
+      }
+      checkURL()
+    }, [])
+    //<<<<<<
 
   useEffect(() => {
     const fetchItems = async () => {
         try {
-            const response = await fetch(`https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/store/items`, {
+            const response = await fetch(storeURL, {
               method: "GET",
               headers: {
                 "Content-Type": "application/json",
@@ -32,7 +46,11 @@ const StorePage = () => {
         }
     }
     fetchItems();
-}, []);
+}, [storeURL]);
+
+const addToCart = (e) => {
+  console.log()
+}
   
   return (
     <>
@@ -59,7 +77,7 @@ const StorePage = () => {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small">Add To Cart</Button>
+              <Button size="small" onClick={addToCart}>Add To Cart</Button>
               <Button size="small">Learn More</Button>
             </CardActions>
           </Card>

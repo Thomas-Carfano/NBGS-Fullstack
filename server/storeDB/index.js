@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
 
 router.get("/items", async (req, res) => {
 try {
-    const items = await prisma.item.findMany();
+    const items = await prisma.items.findMany();
     // Check if items exists
     if (!items) {
     return res.status(404).json({ error: 'No Items found' });
