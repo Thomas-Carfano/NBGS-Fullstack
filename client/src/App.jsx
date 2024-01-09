@@ -18,14 +18,14 @@ const App = () => {
 
   return (
     <>
-    <NavBar token={token} setToken={setToken}/>
+    <NavBar token={token} cartItems={cartItems}/>
       <Routes>
         <Route path="/" element={<HomePage />}/>
         <Route path="/login" element={<LoginPage setToken={setToken}/>}/>
         <Route path="/signup" element={<SignUp setToken={setToken}/>}/> 
         <Route path="/store" element={<StorePage setCartItems={setCartItems}/>}/>
         <Route path="/admin" element={<AdminPage/>}/>
-        <Route path="/cart" element={<CartPage cartItems={cartItems}/>}/>
+        <Route path="/cart" element={<CartPage/>}/>
         <Route path="/test" element={<TestPage/>}/>
       </Routes>
     <Footer/>
