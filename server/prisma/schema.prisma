@@ -20,13 +20,13 @@ model User {
   admin       Boolean
 }
 
-model Item {
+model Items {
   id          Int @id @unique @default(autoincrement())
   name        String @db.VarChar(255) @unique
-  brand       String @db.VarChar(255) @unique
   price       Int
   cost        Int
-  description String
-  image       String
-  gender      String
+  gender      Boolean
+  image_url   String
+  brand       String @db.VarChar(255)
+  item_description String
 }

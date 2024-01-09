@@ -29,6 +29,7 @@ const LoginPage = ({ setToken }) => {
   const [loginURL, setLoginURL] = useState(null)
   const navigate = useNavigate();
 
+  //USED FOR LOCAL TESTING TO SAVE MONEY ON API CALLS >>>
   useEffect(() => {
   const checkURL = () => {
     if(document.referrer=="https://nbgolfshop.com"){
@@ -39,6 +40,7 @@ const LoginPage = ({ setToken }) => {
   }
   checkURL()
 }, [])
+//<<<<<<
 
   const getFormData = async (event) => {
     event.preventDefault();
