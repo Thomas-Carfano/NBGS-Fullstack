@@ -26,17 +26,15 @@ const defaultTheme = createTheme({
 const LoginPage = ({ setToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loginURL, setLoginURL] = useState(null)
+  const [loginURL, setLoginURL] = useState("/auth/login")
   const navigate = useNavigate();
 
   //USED FOR LOCAL TESTING TO SAVE MONEY ON API CALLS >>>
   useEffect(() => {
   const checkURL = () => {
-    if(document.referrer=="https://nbgolfshop.com"){
+    if(document.referrer=="https:/www.nbgolfshop.com"){
       setLoginURL("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/auth/login")
-    } else {
-      setLoginURL("/auth/login")
-    }
+    } 
   }
   checkURL()
 }, [])

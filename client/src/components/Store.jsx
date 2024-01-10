@@ -10,15 +10,13 @@ import { useState, useEffect } from 'react';
 
 const StorePage = ({setCartItems}) => {
   const [storeProducts, setStoreProducts] = useState([]);
-  const [storeURL, setStoreURL] = useState(null)
+  const [storeURL, setStoreURL] = useState("/storeDB/items")
 
     //USED FOR LOCAL TESTING TO SAVE MONEY ON API CALLS >>>
     useEffect(() => {
       const checkURL = () => {
-        if(document.referrer=="https://nbgolfshop.com"){
+        if(document.referrer=="https://www.nbgolfshop.com"){
           setStoreURL("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/auth/login")
-        } else {
-          setStoreURL("/storeDB/items")
         }
       }
       checkURL()
