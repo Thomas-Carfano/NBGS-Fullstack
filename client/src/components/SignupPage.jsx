@@ -30,17 +30,19 @@ const SignUp = ({ setToken }) => {
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName] = useState("");
   const navigate = useNavigate();
-  const [signupURL, setSignupURL] = useState("/auth/signup")
+  const [signupURL, setSignupURL] = useState("")
 
   //USED FOR LOCAL TESTING TO SAVE MONEY ON API CALLS >>>
   useEffect(() => {
-    const checkURL = () => {
-      if(document.referrer=="https://www.nbgolfshop.com"){
-        setSignupURL("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/auth/login")
+    const setURL = () => {
+      if(window.location.href === "http://localhost:3030/signup"){
+        setSignupURL("/auth/signup")
+        } else {
+        setSignupURL("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/auth/signup")
       }
     }
-    checkURL()
-  }, [])
+    setURL()
+    }, [])
   //<<<<<
 
 

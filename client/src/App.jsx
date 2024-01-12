@@ -14,7 +14,7 @@ import CartPage from './components/CartPage';
 
 const App = () => {
   const [token, setToken] = useState(null);
-  const [cartItems, setCartItems] = useState(null);
+  const [cartItems, setCartItems] = useState([]);
 
   return (
     <>
