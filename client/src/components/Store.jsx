@@ -10,20 +10,20 @@ import { useState, useEffect } from 'react';
 
 const StorePage = ({setCartItems}) => {
   const [storeProducts, setStoreProducts] = useState([]);
-  const [storeURL, setStoreURL] = useState(null)
+  const [storeURL, setStoreURL] = useState("");
 
-    //USED FOR LOCAL TESTING TO SAVE MONEY ON API CALLS >>>
-    useEffect(() => {
-      const checkURL = () => {
-        if(document.referrer=="https://nbgolfshop.com"){
-          setStoreURL("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/auth/login")
-        } else {
-          setStoreURL("/storeDB/items")
-        }
+  //USED FOR LOCAL TESTING TO SAVE MONEY ON API CALLS >>>
+  useEffect(() => {
+    const setURL = () => {
+      if(window.location.href === "http://localhost:3030/store"){
+        setStoreURL("/storeDB/items")
+      } else {
+        setStoreURL("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/store/items")
       }
-      checkURL()
+    }
+    setURL()
     }, [])
-    //<<<<<<
+  //<<<<<
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -47,9 +47,15 @@ const StorePage = ({setCartItems}) => {
     fetchItems();
 }, [storeURL]);
 
-const addToCart = (e) => {
-  console.log(e.target.id)
-  setCartItems(e.target.id)
+const addToCart = (itemId) => {
+  console.log(itemId)
+  setCartItems(prevCartItems => {
+    // Check if the item is already in the cart
+    if (!prevCartItems.includes(itemId)) {
+      return [...prevCartItems, itemId]; // Add the new item ID to the array
+    }
+    return prevCartItems; // If item is already in the cart, return the current state
+  });
 }
   
   return (
@@ -77,7 +83,7 @@ const addToCart = (e) => {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small" onClick={addToCart} id={storeProducts[index].id}>Add To Cart</Button>
+              <Button size="small"onClick={() => addToCart(storeProducts[index].id)} id={storeProducts[index].id}>Add To Cart</Button>
               <Button size="small">Learn More</Button>
             </CardActions>
           </Card>

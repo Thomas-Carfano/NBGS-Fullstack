@@ -26,25 +26,23 @@ const defaultTheme = createTheme({
 const LoginPage = ({ setToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loginURL, setLoginURL] = useState(null)
+  const [loginURL, setLoginURL] = useState("");
   const navigate = useNavigate();
 
-  //USED FOR LOCAL TESTING TO SAVE MONEY ON API CALLS >>>
   useEffect(() => {
-  const checkURL = () => {
-    if(document.referrer=="https://nbgolfshop.com"){
-      setLoginURL("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/auth/login")
-    } else {
+  const setURL = () => {
+    if(window.location.href === "http://localhost:3030/login"){
       setLoginURL("/auth/login")
+    } else {
+      setLoginURL("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/auth/login")
     }
   }
-  checkURL()
-}, [])
-//<<<<<<
+  setURL()
+  }, [])
 
   const getFormData = async (event) => {
     event.preventDefault();
-
+    
     try {
       const response = await fetch(loginURL, {
         method: "POST",

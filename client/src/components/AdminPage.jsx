@@ -29,14 +29,6 @@ const AdminPage = () => {
     setGender(event.target.value);
   };
 
-  const apiToUse = () => {
-    console.log(document.location)
-
-    if(document.referrer=="http://localhost:"){
-      return ""
-    }
-  }
-
     const createItem = async () => {
         try {
             const response = await fetch(`https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/store/items/create`, {
@@ -78,7 +70,6 @@ const AdminPage = () => {
 
   return (
     <>
-    <Button variant="contained" onClick={apiToUse}>WHAT IS URL</Button>
     <h2>Create A New Item</h2>
     <Button variant="contained">Create New Item</Button>
    <Box

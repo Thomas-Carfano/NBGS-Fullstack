@@ -7,19 +7,50 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import {useState, useEffect} from 'react';
 
 const CartPage = ({cartItems}) => {
-  console.log(cartItems)
+  const [storeProducts, setStoreProducts] = useState([]);
+  const [cartURL, setCartURL] = useState("");
+  console.log(cartItems);
+  
+    //USED FOR LOCAL TESTING TO SAVE MONEY ON API CALLS >>>
+    useEffect(() => {
+      const setURL = () => {
+        if(window.location.href === "http://localhost:3030/cart"){
+          setCartURL("/storeDB/cart")
+        } else {
+          setCartURL("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/store/items")
+        }
+      }
+      setURL()
+      }, [])
+    //<<<<<<
 
-  const storeProducts = {
-    name: "Chrome Soft X",
-    price: 49.99,
-    cost: 5,
-    gender: true,
-    image_url: "https://cdn-fsly.yottaa.net/58f0c36232f01c6abd17a924/www.callawaygolf.com/v~4b.64/dw/image/v2/AADH_PRD/on/demandware.static/-/Sites-CGI-ItemMaster/en_US/v1704746308659/sits/balls-2022-chrome-soft-x/balls-2022-chrome-soft-x_2___1.png?sw=800&sfrm=png&yocs=P_S_",
-    brand: "Callaway",
-    item_description: "Chrome Soft is better for everyone, from amateurs to major winners.",
-  }
+    useEffect(() => {
+      const fetchItems = async () => {
+          try {
+              const response = await fetch(cartURL, {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ id: cartItems }) 
+              });
+              if (response.ok) {
+                  const data = await response.json();
+                  console.log('testy')
+                  setStoreProducts(data);
+              } else {
+                  console.error("Error Getting Items");
+              }
+          } catch (error) {
+              console.error("Error....", error);
+          }
+      }
+        fetchItems();
+  }, [cartItems, cartURL]);
+
 
   return (
     <>
