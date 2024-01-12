@@ -84,7 +84,7 @@ const addToCart = (itemId) => {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small" onClick={() => addToCart(storeProducts[index].id)} id={storeProducts[index].id}>Add To Cart</Button>
+              <Button size="small" onClick={() => addToCart(storeProducts[index].name)} id={storeProducts[index].name}>Add To Cart</Button>
               <Button size="small">Learn More</Button>
             </CardActions>
           </Card>
