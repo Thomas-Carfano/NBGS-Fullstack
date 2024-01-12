@@ -36,6 +36,7 @@ const StorePage = ({setCartItems}) => {
             });
             if (response.ok) {
                 const data = await response.json();
+                console.log(data)
                 setStoreProducts(data);
             } else {
                 console.error("Error Getting Items");
@@ -83,7 +84,7 @@ const addToCart = (itemId) => {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small"onClick={() => addToCart(storeProducts[index].id)} id={storeProducts[index].id}>Add To Cart</Button>
+              <Button size="small" onClick={() => addToCart(storeProducts[index].id)} id={storeProducts[index].id}>Add To Cart</Button>
               <Button size="small">Learn More</Button>
             </CardActions>
           </Card>
