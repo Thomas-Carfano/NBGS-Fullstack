@@ -24,13 +24,13 @@ try {
 
 router.post("/cart", async (req, res) => {
   try {
-    const { id } = req.body;
-    if(!id || id.length === 0) {
+    const { name } = req.body;
+    if(!name || name.length === 0) {
       return res.status(400).json({error: "No Items in the cart"})
     }
 
     // Check if user exists
-    const item = await prisma.items.findMany({ where: { id: {in: id} } });
+    const item = await prisma.items.findMany({ where: { name: {in: name} } });
     if (!item) {
       return res.status(404).json({ error: 'Item Not Found.' });
     }

@@ -35,7 +35,7 @@ const CartPage = ({cartItems}) => {
                 headers: {
                   "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ id: cartItems }) 
+                body: JSON.stringify({ name: cartItems }) 
               });
               if (response.ok) {
                   const data = await response.json();
