@@ -12,7 +12,6 @@ import {useState, useEffect} from 'react';
 const CartPage = ({cartItems}) => {
   const [storeProducts, setStoreProducts] = useState([]);
   const [cartURL, setCartURL] = useState("");
-  console.log(cartItems);
   
     //USED FOR LOCAL TESTING TO SAVE MONEY ON API CALLS >>>
     useEffect(() => {
@@ -20,7 +19,7 @@ const CartPage = ({cartItems}) => {
         if(window.location.href === "http://localhost:3030/cart"){
           setCartURL("/storeDB/cart")
         } else {
-          setCartURL("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/store/items")
+          setCartURL("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/store/items/cart")
         }
       }
       setURL()
