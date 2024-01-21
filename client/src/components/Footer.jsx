@@ -10,6 +10,8 @@ import Container from '@mui/material/Container';
 import { green } from '@mui/material/colors';
 
 const Footer = () => {
+  const googleMapsAddress = "https://www.google.com/maps/place/Steve+Carfano's+Newport+Beach+Golf+Shop/@33.6592756,-117.8809357,15z/data=!4m6!3m5!1s0x80dcdfab78b3b055:0xb70abddf8d02c58f!8m2!3d33.6592756!4d-117.8809357!16s%2Fg%2F1hf5c32rz?entry=ttu"
+
 
     const Copyright = (props) => {
         return (
@@ -81,7 +83,7 @@ const Footer = () => {
           <p className='storeHours'><b>Store Hours Today:</b> {storeHoursToday()}</p>
           <Link to="tel:9492501900" className='contactInfo'><p><b>Phone Number:</b> (949) 250-1900</p></Link>
           <Link to="mailto:nbgolshop@att.net" className='contactInfo'> <p><b>Email:</b> NBGolfShop@att.net</p></Link>
-          <Link to="https://www.google.com/maps/place/Steve+Carfano's+Newport+Beach+Golf+Shop/@33.6592756,-117.8809357,15z/data=!4m6!3m5!1s0x80dcdfab78b3b055:0xb70abddf8d02c58f!8m2!3d33.6592756!4d-117.8809357!16s%2Fg%2F1hf5c32rz?entry=ttu" className='contactInfo'> <p><b>Address:</b> 3100 Irvine Ave. Newport Beach</p></Link>
+          <Link to={`${googleMapsAddress}`} className='contactInfo'> <p><b>Address:</b> 3100 Irvine Ave. Newport Beach</p></Link>
           <Container maxWidth="sm">
             <Typography variant="body1">
             <Link to="https://www.facebook.com/SteveCarfanosNewportBeachGolfShop/"><FacebookIcon sx={{ ml: 32, mt: 5 }}/></Link>

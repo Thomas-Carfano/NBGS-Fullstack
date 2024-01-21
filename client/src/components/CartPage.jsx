@@ -10,9 +10,10 @@ import Typography from '@mui/material/Typography';
 import {useState, useEffect} from 'react';
 
 const CartPage = ({cartItems}) => {
-  const [storeProducts, setStoreProducts] = useState([]);
+  const [cartProducts, setCartProducts] = useState([]);
   const [cartURL, setCartURL] = useState("");
-  
+  const [cartTotal, setCartTotal] = useState(0)
+
     //USED FOR LOCAL TESTING TO SAVE MONEY ON API CALLS >>>
     useEffect(() => {
       const setURL = () => {
@@ -38,8 +39,9 @@ const CartPage = ({cartItems}) => {
               });
               if (response.ok) {
                   const data = await response.json();
-                  console.log('testy')
-                  setStoreProducts(data);
+                  console.log('Items Succesfully Retrived From Server')
+                  setCartProducts(data);
+                  getCartTotal(data)
               } else {
                   console.error("Error Getting Items");
               }
@@ -50,36 +52,40 @@ const CartPage = ({cartItems}) => {
         fetchItems();
   }, [cartItems, cartURL]);
 
+  const getCartTotal = (cartProducts) => {
+    let num = 0;
+      for(let i = 0; i < cartProducts.length; i++){
+        num += cartProducts[i].price 
+        setCartTotal(num)
+      }
+  }
 
   return (
     <>
-      <h1>Your Cart</h1>
-
       <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-        {storeProducts.map((_, index) => (
-
+        {cartProducts.map((_, index) => (
           <Grid item xs={2} sm={4} md={4} key={index}>
             <>
             <Card sx={{ maxWidth: 345, mt: 5 }}>
             <CardMedia
               sx={{ height: 200 }}
-              image={storeProducts[index]["image_url"]}
-              title={storeProducts[index].name}
+              image={cartProducts[index]["image_url"]}
+              title={cartProducts[index].name}
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-              {storeProducts[index].name}
+              {cartProducts[index].name}
               </Typography>
               <Typography gutterBottom variant="h6" component="div">
-              {storeProducts[index].price}
+              {cartProducts[index].price}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-              {storeProducts[index]["item_description"]}
+              {cartProducts[index]["item_description"]}
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small" >Add To Cart</Button>
+              <Button size="small" >Remove From Cart</Button>
               <Button size="small">Learn More</Button>
             </CardActions>
           </Card>
@@ -89,6 +95,7 @@ const CartPage = ({cartItems}) => {
       </Grid>
     </Box>
       
+      <h1>Cart Total: {`${cartTotal}`}</h1>
     </>
   );
 };
