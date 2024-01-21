@@ -70,8 +70,8 @@ const AdminPage = () => {
 
   return (
     <>
-    <h2>Create A New Item</h2>
-    <Button variant="contained">Create New Item</Button>
+    <h2>Admin Page, Create new item, upload item, edit items</h2>
+    <Button variant="contained">Upload Item(s)</Button>
    <Box
       component="form"
       sx={{'& > :not(style)': { m: 1, width: '25ch' },}}
