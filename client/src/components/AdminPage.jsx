@@ -13,34 +13,51 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-
+import {useEffect} from 'react'
 
 const AdminPage = () => {
   const [gender, setGender] = useState(null);
-  const [itemName, setItemName] = useState("")
-  const [itemPrice, setItemPrice] = useState(0)
-  const [itemCost, setItemCost] = useState(0)
-  const [itemDesc, setItemDescription] = useState("")
-  const [itemImage, setItemImage] = useState("")
-  const [itemBrand, setItemBrand] = useState("")
+  const [itemName, setItemName] = useState("");
+  const [itemPrice, setItemPrice] = useState(0);
+  const [itemCost, setItemCost] = useState(0);
+  const [itemDesc, setItemDescription] = useState("");
+  const [itemImage, setItemImage] = useState("");
+  const [itemBrand, setItemBrand] = useState("");
   const [storeProducts, setStoreProducts] = useState([]);
+  const [adminURLCreate, setAdminURLCreate] = useState("");
+  const [adminURLFrind, setAdminURLFrind] = useState("");
 
   const selectGender = (event) => {
     setGender(event.target.value);
   };
 
+      //USED FOR LOCAL TESTING TO SAVE MONEY ON API CALLS >>>
+      useEffect(() => {
+        const setURL = () => {
+          if(window.location.href === "http://localhost:3030/admin"){
+            setAdminURLCreate("/storeDB/create")
+            setAdminURLFrind("/storeDB/items")
+          } else {
+            setAdminURLCreate("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/store/items/create")
+            setAdminURLFrind("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/store/items")
+          }
+        }
+        setURL()
+        }, [])
+      //<<<<<<
+
     const createItem = async () => {
         try {
-            const response = await fetch(`https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/store/items/create`, {
+            const response = await fetch(adminURLCreate, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
               },
-              body: JSON.stringify({ name: itemName, price: itemPrice, cost: itemCost, gender: gender, "image-url": itemImage, brand: itemBrand, "item-description": itemDesc}),
+              body: JSON.stringify({ name: itemName, price: itemPrice, cost: itemCost, gender: gender, "image_url": itemImage, brand: itemBrand, "item_description": itemDesc}),
             });
             if (response.ok) {
                 const data = await response.json();
-                console.log(data)
+                console.log(data);
             } else {
                 console.error("Error Creating Item");
             }
@@ -50,7 +67,7 @@ const AdminPage = () => {
     }
       const fetchItems = async () => {
           try {
-              const response = await fetch(`https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/store/items`, {
+              const response = await fetch(adminURLFrind, {
                 method: "GET",
                 headers: {
                   "Content-Type": "application/json",
@@ -58,7 +75,7 @@ const AdminPage = () => {
               });
               if (response.ok) {
                   const data = await response.json();
-                  console.log(data)
+                  console.log(data);
                   setStoreProducts(data);
               } else {
                   console.error("Error Getting Items");

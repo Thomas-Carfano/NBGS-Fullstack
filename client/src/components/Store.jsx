@@ -22,7 +22,7 @@ const StorePage = ({setCartItems}) => {
       }
     }
     setURL()
-    }, [])
+    }, []);
   //<<<<<
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const StorePage = ({setCartItems}) => {
             });
             if (response.ok) {
                 const data = await response.json();
-                console.log(data)
+                console.log(data);
                 setStoreProducts(data);
             } else {
                 console.error("Error Getting Items");
