@@ -36,7 +36,6 @@ const seed = async() => {
             image_url: "https://cdn-fsly.yottaa.net/58f0c36232f01c6abd17a924/www.callawaygolf.com/v~4b.64/dw/image/v2/AADH_PRD/on/demandware.static/-/Sites-CGI-ItemMaster/en_US/v1704746308659/sits/balls-2022-chrome-soft-x/balls-2022-chrome-soft-x_2___1.png?sw=800&sfrm=png&yocs=P_S_",
             brand: "Callaway",
             item_description: "Chrome Soft is better for everyone, from amateurs to major winners.",
-
         }
     }),
 

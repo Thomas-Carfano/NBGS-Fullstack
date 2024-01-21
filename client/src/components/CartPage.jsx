@@ -55,7 +55,7 @@ const CartPage = ({cartItems}) => {
   const getCartTotal = (cartProducts) => {
     let num = 0;
       for(let i = 0; i < cartProducts.length; i++){
-        num += cartProducts[i].price 
+        num += Number(cartProducts[i].price)
         setCartTotal(num)
       }
   }

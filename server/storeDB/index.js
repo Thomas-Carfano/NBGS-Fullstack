@@ -43,5 +43,39 @@ router.post("/cart", async (req, res) => {
   }
 });
 
+router.post("/create", async (req, res) => {
+  console.log(req.body)
+  try {
+    const { name, price, cost, gender, image_url, brand, item_description } = req.body;
+
+    // Check if user already exists
+    const itemExists = await prisma.items.findUnique({ where: { name } });
+    if (itemExists) {
+      return res.status(400).json({ error: 'Email already in use.' });
+    }
+
+    // Hash the password before saving it
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Save the user to the database
+    const newItem = await prisma.items.create({
+        data: {
+            name,
+            price,
+            cost,
+            gender,
+            image_url, 
+            brand,
+            item_description
+        }
+    });
+    console.log(newItem)
+    res.status(201).json({ message: 'Item Created successfully' });
+
+  } catch (error) {
+    res.status(500).json({ error: 'Something went wrong. Please try again.'});
+  }
+});
+
 
 module.exports = router;
