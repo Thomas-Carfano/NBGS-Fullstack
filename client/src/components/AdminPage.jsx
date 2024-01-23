@@ -142,7 +142,7 @@ const AdminPage = () => {
             <Card sx={{ maxWidth: 345, mt: 5 }}>
             <CardMedia
               sx={{ height: 200 }}
-              image={storeProducts[index]["image-url"]}
+              image={storeProducts[index]["image_url"]}
               title={storeProducts[index].name}
             />
             <CardContent>
@@ -153,7 +153,7 @@ const AdminPage = () => {
               {storeProducts[index].price}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-              {storeProducts[index]["item-description"]}
+              {storeProducts[index]["item_description"]}
               </Typography>
             </CardContent>
             <CardActions>

@@ -61,3 +61,7 @@
 #shopping-cart-icon{
     color: black;
 }
+
+#cartTotal{
+    margin-right: 50%;
+}
