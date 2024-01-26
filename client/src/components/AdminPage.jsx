@@ -91,9 +91,10 @@ const AdminPage = () => {
     <Button variant="contained">Upload Item(s)</Button>
    <Box
       component="form"
-      sx={{'& > :not(style)': { m: 1, width: '25ch' },}}
+      sx={{ m: 1, width: '25ch'}}
       noValidate
       autoComplete="off"
+      
     >
       <TextField id="standard-basic" label="Item Name" variant="standard" onChange={(event) => setItemName(event.target.value)} />
       <br/>

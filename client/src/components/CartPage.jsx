@@ -12,7 +12,7 @@ import {useState, useEffect} from 'react';
 const CartPage = ({cartItems}) => {
   const [cartProducts, setCartProducts] = useState([]);
   const [cartURL, setCartURL] = useState("");
-  const [cartTotal, setCartTotal] = useState(0)
+  const [cartTotal, setCartTotal] = useState(0);
 
     //USED FOR LOCAL TESTING TO SAVE MONEY ON API CALLS >>>
     useEffect(() => {
@@ -23,8 +23,8 @@ const CartPage = ({cartItems}) => {
           setCartURL("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/store/items/cart")
         }
       }
-      setURL()
-      }, [])
+      setURL();
+      }, []);
     //<<<<<<
 
     useEffect(() => {
@@ -39,9 +39,9 @@ const CartPage = ({cartItems}) => {
               });
               if (response.ok) {
                   const data = await response.json();
-                  console.log('Items Succesfully Retrived From Server')
+                  console.log('Items Succesfully Retrived From Server');
                   setCartProducts(data);
-                  getCartTotal(data)
+                  getCartTotal(data);
               } else {
                   console.error("Error Getting Items");
               }
@@ -55,8 +55,8 @@ const CartPage = ({cartItems}) => {
   const getCartTotal = (cartProducts) => {
     let num = 0;
       for(let i = 0; i < cartProducts.length; i++){
-        num += Number(cartProducts[i].price)
-        setCartTotal(num)
+        num += Number(cartProducts[i].price);
+        setCartTotal(num);
       }
   }
 

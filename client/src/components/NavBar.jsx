@@ -23,7 +23,7 @@ return (
   <>
     <Link to='/' className='title'><h1 id="main-title">Newport Beach Golf Shop<img id="main-logo" src={pic}/></h1></Link>
     <nav id="button-nav">
-      <ThemeProvider theme={theme} sx={{ fontFamily: 'Roboto' }}>
+      <ThemeProvider theme={theme} sx={{ fontFamily: 'Roboto'}}>
           <Link to='/'><Button variant="contained" sx={{ mr: 5 }}> Home Page</Button></Link>
           <Link to='/store'><Button variant="contained" sx={{ mr: 5 }} >Store</Button></Link>
           {token ? null : <Link to='/login'><Button variant="contained" sx={{ mr: 5 }}>Login</Button></Link>}
