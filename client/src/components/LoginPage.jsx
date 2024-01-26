@@ -32,13 +32,13 @@ const LoginPage = ({ setToken }) => {
   useEffect(() => {
   const setURL = () => {
     if(window.location.href === "http://localhost:3030/login"){
-      setLoginURL("/auth/login")
+      setLoginURL("/auth/login");
     } else {
-      setLoginURL("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/auth/login")
+      setLoginURL("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/auth/login");
     }
-  }
-  setURL()
-  }, [])
+  };
+  setURL();
+  }, []);
 
   const getFormData = async (event) => {
     event.preventDefault();
@@ -60,7 +60,7 @@ const LoginPage = ({ setToken }) => {
         localStorage.setItem("token", data.token);
         localStorage.setItem("userId", data.id);
         setToken(data.token);
-        console.log(`Login Sucessful: ${data.token}`)
+        console.log(`Login Sucessful: ${data.token}`);
       }
     } catch (err) {
       console.log(err);

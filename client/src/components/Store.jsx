@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useState, useEffect } from 'react';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
+import Link from '@mui/material/Link';
 
 const StorePage = ({setCartItems}) => {
   const [storeProducts, setStoreProducts] = useState([]);
@@ -17,12 +18,12 @@ const StorePage = ({setCartItems}) => {
   useEffect(() => {
     const setURL = () => {
       if(window.location.href === "http://localhost:3030/store"){
-        setStoreURL("/storeDB/items")
+        setStoreURL("/storeDB/items");
       } else {
-        setStoreURL("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/store/items")
+        setStoreURL("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/store/items");
       }
-    }
-    setURL()
+    };
+    setURL();
     }, []);
   //<<<<<
 
@@ -58,12 +59,13 @@ const addToCart = (itemId) => {
     }
     return prevCartItems; // If item is already in the cart, return the current state
   });
-}
+};
   
   return (
     <>
     <br/>
-    <FilterAltIcon></FilterAltIcon>
+    <br/>
+    <Link href='#'><FilterAltIcon sx={{ml: 175, display: 'flex'}}/></Link>
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
         {storeProducts.map((_, index) => (
