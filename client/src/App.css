@@ -42,6 +42,30 @@
     text-decoration: none;
 }
 
+#pingMain {
+    height: 100px;
+    width: 350px;
+    margin-right: 20px;
+}
+
+#callawayMain {
+    height: 110px;
+    width: 200px;
+    margin-right: 20px;
+}
+
+#taylormadeMain {
+    height: 100px;
+    width: 350px;
+    margin-right: 20px;
+}
+
+#titleistMain {
+    height: 100px;
+    width: 350px;
+    margin-right: 20px;
+}
+
 #button-nav{
     display: inline-flex;
     font-family: "Roboto";

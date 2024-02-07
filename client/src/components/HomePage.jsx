@@ -1,5 +1,10 @@
 import '../App.css';
 import nbgsHome from '../pictures/nbgsHome.jpeg'
+import pingMain from '../pictures/pingMain.png'
+import callawayMain from '../pictures/callawayMain.png'
+import taylormadeMain from '../pictures/taylormadeMain.png'
+import titleistMain from '../pictures/titleistMain.png'
+import srixonMain from '../pictures/srixonMain.png'
 
 const HomePage = () => {
 
@@ -16,6 +21,13 @@ const HomePage = () => {
         balls, golf shoes and golf clubs, Guaranteed!
        </p>
     <img id='homePic' src={nbgsHome}></img>
+    <br/>
+    <h1>Brands Available</h1>
+    <img id="pingMain" src={pingMain}/>
+    <img id="callawayMain" src={callawayMain}/>
+    <img id="taylormadeMain" src={taylormadeMain}/>
+    <img id="titleistMain" src={titleistMain}/>
+    <img id="srixonMain" src={srixonMain}/>
     </>
   );
 };
