@@ -35,14 +35,14 @@ const Footer = () => {
       });
 
       const storeHours = [
-        "10:00am - 5:00pm",
-        "9:30am - 6:30pm",
-        "9:30am - 6:30pm",
-        "9:30am - 6:30pm",
-        "9:30am - 6:30pm",
-        "9:30am - 6:30pm",
-        "9:30am - 6:30pm",
-        "9:30am - 6:30pm",
+        "10:00am - 5:30pm",
+        "9:15am - 6:15pm",
+        "9:15am - 6:15pm",
+        "9:15am - 6:15pm",
+        "9:15am - 6:15pm",
+        "9:15am - 6:15pm",
+        "9:15am - 6:15pm",
+        "9:15am - 6:15pm",
       ];
       
       const storeHoursToday = () => {
@@ -81,13 +81,13 @@ const Footer = () => {
           }}
         >
           <p className='storeHours'><b>Store Hours Today:</b> {storeHoursToday()}</p>
-          <Link to="tel:9492501900" className='contactInfo'><p><b>Phone Number:</b> (949) 250-1900</p></Link>
-          <Link to="mailto:nbgolshop@att.net" className='contactInfo'> <p><b>Email:</b> NBGolfShop@att.net</p></Link>
-          <Link to={`${googleMapsAddress}`} className='contactInfo'> <p><b>Address:</b> 3100 Irvine Ave. Newport Beach</p></Link>
+          <p><Link to="tel:9492501900" className='contactInfo'><b>Phone Number:</b> (949) 250-1900</Link></p>
+          <p><Link to="mailto:nbgolshop@att.net" className='contactInfo'> <b>Email:</b> NBGolfShop@att.net</Link></p>
+          <p><Link to={`${googleMapsAddress}`} className='contactInfo'> <b>Address:</b> 3100 Irvine Ave. Newport Beach</Link></p>
           <Container maxWidth="sm">
             <Typography variant="body1">
-            <Link to="https://www.facebook.com/SteveCarfanosNewportBeachGolfShop/"><FacebookIcon sx={{ ml: 32, mt: 5 }}/></Link>
-            <Link to="https://www.yelp.com/biz/steve-carfanos-newport-beach-golf-shop-store-newport-beach-2"><img id="yelp-logo" src={`${Pic}`}/></Link>
+            <span><Link to="https://www.facebook.com/SteveCarfanosNewportBeachGolfShop/"><FacebookIcon sx={{ ml: 32, mt: 5 }}/></Link></span>
+            <span><Link to="https://www.yelp.com/biz/steve-carfanos-newport-beach-golf-shop-store-newport-beach-2"><img id="yelp-logo" src={`${Pic}`}/></Link></span>
             </Typography>
             <Copyright/>
           </Container>
@@ -98,4 +98,4 @@ const Footer = () => {
     )
 }
 
-export default Footer
+export default Footer;

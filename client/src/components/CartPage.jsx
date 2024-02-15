@@ -18,9 +18,9 @@ const CartPage = ({cartItems}) => {
     useEffect(() => {
       const setURL = () => {
         if(window.location.href === "http://localhost:3030/cart"){
-          setCartURL("/storeDB/cart")
+          setCartURL("/storeDB/cart");
         } else {
-          setCartURL("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/store/items/cart")
+          setCartURL("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/store/items/cart");
         }
       }
       setURL();
