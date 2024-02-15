@@ -13,7 +13,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import {useEffect} from 'react'
+import {useEffect} from 'react';
 
 const AdminPage = () => {
   const [gender, setGender] = useState(null);
@@ -35,15 +35,15 @@ const AdminPage = () => {
       useEffect(() => {
         const setURL = () => {
           if(window.location.href === "http://localhost:3030/admin"){
-            setAdminURLCreate("/storeDB/create")
-            setAdminURLFrind("/storeDB/items")
+            setAdminURLCreate("/storeDB/create");
+            setAdminURLFrind("/storeDB/items");
           } else {
-            setAdminURLCreate("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/store/items/create")
-            setAdminURLFrind("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/store/items")
+            setAdminURLCreate("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/store/items/create");
+            setAdminURLFrind("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/store/items");
           }
         }
-        setURL()
-        }, [])
+        setURL();
+        }, []);
       //<<<<<<
 
     const createItem = async () => {
@@ -89,6 +89,7 @@ const AdminPage = () => {
     <>
     <h2>Admin Page, Create new item, upload item, edit items</h2>
     <Button variant="contained">Upload Item(s)</Button>
+    <h2>Create New Item</h2>
    <Box
       component="form"
       sx={{ m: 1, width: '25ch'}}

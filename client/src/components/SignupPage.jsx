@@ -36,12 +36,12 @@ const SignUp = ({ setToken }) => {
   useEffect(() => {
     const setURL = () => {
       if(window.location.href === "http://localhost:3030/signup"){
-        setSignupURL("/auth/signup")
+        setSignupURL("/auth/signup");
         } else {
-        setSignupURL("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/auth/signup")
+        setSignupURL("https://6o0vhf727a.execute-api.us-west-2.amazonaws.com/PROD/auth/signup");
       }
     }
-    setURL()
+    setURL();
     }, [])
   //<<<<<
 

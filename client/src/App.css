@@ -1,26 +1,26 @@
-.nav{
+.nav {
     margin-left: 10%;
     border: 1px solid green;
     padding: 5px 20px 5px 10px;
     text-align: center;
 }
 
-.title{
+.title {
     font-family: cursive;
     text-decoration: none;
 }
-#main-title{
+#main-title {
     font-family: cursive;
     text-decoration: none;
     color: black
 }
 
 
-.navButton{
+.navButton {
     margin-right: 50%;
 }
 
-.contactInfo{
+.contactInfo {
     text-decoration: none;
     color: black;
 
@@ -66,26 +66,32 @@
     margin-right: 20px;
 }
 
+#cobraMain {
+    height: 75px;
+    width: 300px;
+    margin-right: 20px;
+}
+
 #button-nav{
     display: inline-flex;
     font-family: "Roboto";
 }
 
-#storeHours{
+#storeHours {
     text-align: center;
     margin-right: 20%;
 }
 
-#homePic{
+#homePic {
     height: 350px;
     width: 500px;
     margin-top: 5%;
 }
 
-#shopping-cart-icon{
+#shopping-cart-icon {
     color: black;
 }
 
-#cartTotal{
+#cartTotal {
     margin-right: 50%;
 }
