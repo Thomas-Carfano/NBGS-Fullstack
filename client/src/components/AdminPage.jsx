@@ -46,6 +46,17 @@ const AdminPage = () => {
         }, []);
       //<<<<<<
 
+
+      const prepCreateNewItem = () => {
+        console.log("Create New Item");
+        const createNewItem = document.getElementById("create-item");
+        if(createNewItem.style.display === "none"){
+          createNewItem.style.display = "block";
+        } else {
+          createNewItem.style.display = "none";
+          };
+    };
+
     const createItem = async () => {
         try {
             const response = await fetch(adminURLCreate, {
@@ -64,7 +75,8 @@ const AdminPage = () => {
         } catch (error) {
             console.error("Error....", error);
         }
-    }
+    };
+
       const fetchItems = async () => {
           try {
               const response = await fetch(adminURLFrind, {
@@ -83,55 +95,61 @@ const AdminPage = () => {
           } catch (error) {
               console.error("Error....", error);
           }
-      }
+      };
 
   return (
     <>
     <h2>Admin Page, Create new item, upload item, edit items</h2>
+
     <Button variant="contained">Upload Item(s)</Button>
-    <h2>Create New Item</h2>
-   <Box
-      component="form"
-      sx={{ m: 1, width: '25ch'}}
-      noValidate
-      autoComplete="off"
-      
-    >
-      <TextField id="standard-basic" label="Item Name" variant="standard" onChange={(event) => setItemName(event.target.value)} />
-      <br/>
-      <TextField id="standard-basic" label="Price" variant="standard" onChange={(event) => setItemPrice(event.target.value)}/>
-      <TextField id="standard-basic" label="Cost" variant="standard" onChange={(event) => setItemCost(event.target.value)}/>
-      <br/>
-      <TextField
-          id="outlined-multiline-static"
-          label="Description"
-          multiline
-          rows={4}
-          onChange={(event) => setItemDescription(event.target.value)}
-        />
-      <br/>
-      <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Gender</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={gender}
-          label="Age"
-          onChange={selectGender}
+    <br/><br/>
+
+    <Button variant="contained" onClick={prepCreateNewItem}>Create New Item</Button>
+
+   
+      <Box
+          component="form"
+          sx={{ m: 1, width: '25ch', display: "none"}}
+          noValidate
+          autoComplete="off"
+          id="create-item"
         >
-          <MenuItem value={true}>Male</MenuItem>
-          <MenuItem value={false}>Female</MenuItem>
-        </Select>
-      </FormControl>
-    </Box>
-    <br/>
-    <TextField id="standard-basic" label="Image URL" variant="standard" onChange={(event) => setItemImage(event.target.value)}/>
-    <br/>
-    <TextField id="standard-basic" label="Brand" variant="standard" onChange={(event) => setItemBrand(event.target.value)}/>
-    <br/>
-    <Button variant="contained" onClick={createItem}>Create New Item</Button>
-    </Box>
+          <TextField id="standard-basic" label="Item Name" variant="standard" onChange={(event) => setItemName(event.target.value)} />
+          <br/>
+          <TextField id="standard-basic" label="Price" variant="standard" onChange={(event) => setItemPrice(event.target.value)}/>
+          <TextField id="standard-basic" label="Cost" variant="standard" onChange={(event) => setItemCost(event.target.value)}/>
+          <br/>
+          <TextField
+              id="outlined-multiline-static"
+              label="Description"
+              multiline
+              rows={4}
+              onChange={(event) => setItemDescription(event.target.value)}
+            />
+          <br/>
+          <Box sx={{ minWidth: 120 }}>
+            <FormControl fullWidth>
+              <InputLabel id="demo-simple-select-label">Gender</InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={gender}
+                  label="Age"
+                  onChange={selectGender}
+                >
+                  <MenuItem value={true}>Male</MenuItem>
+                  <MenuItem value={false}>Female</MenuItem>
+                </Select>
+            </FormControl>
+          </Box>
+        <br/>
+          <TextField id="standard-basic" label="Image URL" variant="standard" onChange={(event) => setItemImage(event.target.value)}/>
+        <br/>
+          <TextField id="standard-basic" label="Brand" variant="standard" onChange={(event) => setItemBrand(event.target.value)}/>
+        <br/>
+          <Button variant="contained" onClick={createItem}>Create New Item2</Button>
+        </Box>
+
 
 <h1>Edit Store Items</h1>
 <Button variant="contained" onClick={fetchItems}>Get Items</Button>
