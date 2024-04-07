@@ -86,8 +86,8 @@ const Footer = () => {
           <p><Link to={`${googleMapsAddress}`} className='contactInfo'> <b>Address:</b> 3100 Irvine Ave. Newport Beach</Link></p>
           <Container maxWidth="sm">
             <Typography variant="body1">
-            <span><Link to="https://www.facebook.com/SteveCarfanosNewportBeachGolfShop/"><FacebookIcon sx={{ ml: 32, mt: 5 }}/></Link></span>
-            <span><Link to="https://www.yelp.com/biz/steve-carfanos-newport-beach-golf-shop-store-newport-beach-2"><img id="yelp-logo" src={`${Pic}`}/></Link></span>
+            <Link to="https://www.facebook.com/SteveCarfanosNewportBeachGolfShop/"><FacebookIcon sx={{ ml: 32, mt: 5 }}/></Link>
+            <Link to="https://www.yelp.com/biz/steve-carfanos-newport-beach-golf-shop-store-newport-beach-2"><img id="yelp-logo" src={`${Pic}`}/></Link>
             </Typography>
             <Copyright/>
           </Container>
@@ -96,6 +96,6 @@ const Footer = () => {
     </ThemeProvider>
         </>
     )
-}
+};
 
 export default Footer;

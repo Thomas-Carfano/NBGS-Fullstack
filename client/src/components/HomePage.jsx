@@ -23,13 +23,13 @@ const HomePage = () => {
        </p>
     <img id='homePic' src={nbgsHome}/>
     <br/>
-    <h1>Brands Available</h1>
+    {/* <h1>Brands Available</h1>
     <img id="pingMain" src={pingMain}/>
     <img id="callawayMain" src={callawayMain}/>
     <img id="taylormadeMain" src={taylormadeMain}/>
     <img id="titleistMain" src={titleistMain}/>
     <img id="srixonMain" src={srixonMain}/>
-    <img id="cobraMain" src={cobraMain}/>
+    <img id="cobraMain" src={cobraMain}/> */}
     </>
   );
 };
