@@ -12,12 +12,18 @@
 #main-title {
     font-family: cursive;
     text-decoration: none;
-    color: black
+    color: black;
+    margin-left: 20px;
+}
+
+#main-paragraph{
+    margin-left: 20px;
 }
 
 
 .navButton {
     margin-right: 50%;
+    margin-left: 25px
 }
 
 .contactInfo {
@@ -75,6 +81,7 @@
 #button-nav{
     display: inline-flex;
     font-family: "Roboto";
+    margin-left: 20px;
 }
 
 #storeHours {
@@ -86,12 +93,13 @@
     height: 350px;
     width: 500px;
     margin-top: 5%;
+    margin-left: 20px;
 }
 
 #shopping-cart-icon {
     color: black;
 }
 
-#cartTotal {
-    margin-right: 50%;
+.cartTotal {
+    margin-left: 75%;
 }

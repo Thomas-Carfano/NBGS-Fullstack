@@ -95,7 +95,7 @@ const CartPage = ({cartItems}) => {
       </Grid>
     </Box>
       
-      <h1 className='cartTotal'>Cart Total: {`${cartTotal}`}</h1>
+      <h1 id='cartTotal'>Cart Total: {`${cartTotal}`}</h1>
     </>
   );
 };

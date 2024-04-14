@@ -101,18 +101,17 @@ const AdminPage = () => {
     <>
     <h2>Admin Page, Create new item, upload item, edit items</h2>
 
-    <Button variant="contained">Upload Item(s)</Button>
+    <Button variant="contained">Upload New Item</Button>
     <br/><br/>
 
     <Button variant="contained" onClick={prepCreateNewItem}>Create New Item</Button>
 
-   
+    <div id="create-item" style={{display: "none"}}>
       <Box
           component="form"
-          sx={{ m: 1, width: '25ch', display: "none"}}
+          sx={{ m: 1, width: '25ch'}}
           noValidate
           autoComplete="off"
-          id="create-item"
         >
           <TextField id="standard-basic" label="Item Name" variant="standard" onChange={(event) => setItemName(event.target.value)} />
           <br/>
@@ -149,7 +148,7 @@ const AdminPage = () => {
         <br/>
           <Button variant="contained" onClick={createItem}>Create New Item2</Button>
         </Box>
-
+        </div>
 
 <h1>Edit Store Items</h1>
 <Button variant="contained" onClick={fetchItems}>Get Items</Button>
