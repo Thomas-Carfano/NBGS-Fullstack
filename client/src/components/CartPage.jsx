@@ -96,6 +96,7 @@ const CartPage = ({cartItems}) => {
     </Box>
       
       <h1 id='cartTotal'>Cart Total: {`${cartTotal}`}</h1>
+      {!cartTotal ? null : <h1 id='cartTotal'>Cart Total1: {`${cartTotal}`}</h1>}
     </>
   );
 };

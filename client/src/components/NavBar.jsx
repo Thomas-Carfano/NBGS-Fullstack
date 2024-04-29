@@ -30,8 +30,9 @@ return (
           {!token ? null : <Link to='/admin'><Button variant="contained" sx={{ mr: 5 }}>Admin</Button></Link>}
           {/* <Button variant="contained" sx={{ mr: 5 }} href='/test'>Test</Button> */}
       </ThemeProvider>
-      <Link to="/cart"><ShoppingCartIcon id="shopping-cart-icon" sx={{ml: 108}}/></Link>
-    </nav>
+      </nav>
+      <Link to="/cart"><ShoppingCartIcon id="shopping-cart-icon"/></Link>
+    
   </>
   )
 }

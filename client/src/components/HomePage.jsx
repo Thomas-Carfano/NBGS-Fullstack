@@ -7,6 +7,7 @@ const HomePage = () => {
     <br/>
     <div id="main-paragraph">
        <p >
+          <b>
          We invite you to experience our incredible selection
          of brand name golf apparel, equipment <br/> and accessories
          at superstore pricing with quality services you can only
@@ -14,10 +15,10 @@ const HomePage = () => {
          store with the look and feel of a private club pro shop.<br/> We
          have the lowest prices on top name brand golf equipment, golf
         balls, golf shoes and golf clubs, Guaranteed!
+        </b>
        </p>
       </div>
     <img id='homePic' src={nbgsHome}/>
-    
     </>
   );
 };
